@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friend-Finder</title>
+
+    <!-- reset css -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- font awesome 5 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- display the title on the page -->
+        <div class="row">
+            <div class="col-12">
+                <h3>Survey Questions</h3>
+                <hr>
+            </div> <!-- end col-12 -->
+        </div> <!-- end row -->
+
+        <!-- get information about the user -->
+        <div class="row">
+            <div class="col-12 form-group">
+                <h4><strong>About You</strong></h4>
+
+                <!-- get name field -->
+                <p>Name (Required)</p>
+                <input type="text" class="validate form-control" placeholder="Enter your name here..." id="friendName"
+                    required>
+                <br>
+
+                <!-- get link to image -->
+                <p>Link to Photo Image (Required)</p>
+                <input type="text" class="validate form-control" placeholder="Enter a link to a photo here..." id="friendPhoto"
+                    required>
+                <hr>
+            </div> <!-- end col-12 -->
+        </div> <!-- end row -->
+
+        <!-- get answers to survey questions -->
+        <div class="row">
+            <div class="col-12">
+
+                <div>
+                    <!-- question 1 -->
+                    <h5><strong>Question 1</strong></h5>
+                    <p>You prefer Disney World over Disney Land.</p>
+                    <select id="question1">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 1 -->
+                <br>
+
+                <div>
+                    <!-- question 2 -->
+                    <h5><strong>Question 2</strong></h5>
+                    <p>You prefer EPCOT over Hollywood Studios.</p>
+                    <select id="question2">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 2 -->
+                <br>
+
+                <div>
+                    <!-- question 3 -->
+                    <h5><strong>Question 3</strong></h5>
+                    <p>You prefer Mount Everest to Space Mountain.</p>
+                    <select id="question3">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 3 -->
+                <br>
+
+                <div>
+                    <!-- question 4 -->
+                    <h5><strong>Question 4</strong></h5>
+                    <p>You prefer Magic Kingdom at night.</p>
+                    <select id="question4">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 4 -->
+                <br>
+
+                <div>
+                    <!-- question 5 -->
+                    <h5><strong>Question 5</strong></h5>
+                    <p>Wishes was better than Happily Ever After.</p>
+                    <select id="question5">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 5 -->
+                <br>
+
+                <div>
+                    <!-- question 6 -->
+                    <h5><strong>Question 6</strong></h5>
+                    <p>You take advantage of Extra Magic Hours.</p>
+                    <select id="question6">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 6 -->
+                <br>
+
+                <div>
+                    <!-- question 7 -->
+                    <h5><strong>Question 7</strong></h5>
+                    <p>You like FastPass.</p>
+                    <select id="question7">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 7 -->
+                <br>
+
+                <div>
+                    <!-- question 8 -->
+                    <h5><strong>Question 8</strong></h5>
+                    <p>You prefer staying at a Disney resort.</p>
+                    <select id="question8">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 8 -->
+                <br>
+
+                <div>
+                    <!-- question 9 -->
+                    <h5><strong>Question 9</strong></h5>
+                    <p>A Disney World stay should be at least 10 days long.</p>
+                    <select id="question9">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 9 -->
+                <br>
+
+                <div>
+                    <!-- question 10 -->
+                    <h5><strong>Question 10</strong></h5>
+                    <p>Disney World is the happiest place on earth.</p>
+                    <select id="question10">
+                        <option value="">Select your choice below...</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2 (Disagree)</option>
+                        <option value="3">3 (Neutral)</option>
+                        <option value="4">4 (Agree)</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div> <!-- end question 10 -->
+                <br>
+
+                <!-- Submit Button -->
+                <div>
+                    <button class="btn btn-primary btn-block" type="submit" name="action" id="submitButton">Submit</button>
+                    <hr>
+                </div> <!-- end submit button -->
+                <br>
+
+                <!-- display links at bottom of page -->
+                <div class="row">
+                    <div class="col-12">
+                        <p>
+                            <a href="/api/friends">API Friends List</a> | <a href="https://github.com/mycatbign/friendfinder">GitHub
+                                Repo</a>
+                        </p>
+                    </div>
+                </div> <!-- end display links row-->
+
+            </div> <!-- end survey questions column -->
+
+        </div> <!-- end survey questions row -->
+
+    </div> <!-- end container -->
+
+    <!-- present the best match for the friend that was just entered -->
+    <!-- ACKNOWLEDGEMENT - below modal div code from homework heroku example site -->
+    <div id="match_results" class="modal-fade" role="dialog" style="display:none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                    <h2 class="modal-title">
+                        <strong>Best Match</strong>
+                    </h2>
+                </div> <!-- end modal header -->
+                <div class="modal-body">
+                    <h2 id="match_name"></h2>
+                    <img id="match_photo" src="" alt="Missing Photo">
+                </div> <!-- end div modal body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> <!-- end modal footer -->
+            </div> <!-- end modal content div -->
+        </div> <!-- end modal dialog div -->
+    </div> <!-- end match_results div -->
+
+    <script type="text/javascript">
+        // create an event handler to deal with the submit button when a user completes the survey
+        $('#submitButton').on('click', function (event) {
+            event.preventDefault();
+            // place all of the new friend input in an object so we can add it to our array of other friends
+            var newFriendInput = {
+                name: $('#friendName').val().trim(),
+                photo: $('#friendPhoto').val().trim(),
+                scores: [
+                    $('#question1').val(),
+                    $('#question2').val(),
+                    $('#question3').val(),
+                    $('#question4').val(),
+                    $('#question5').val(),
+                    $('#question6').val(),
+                    $('#question7').val(),
+                    $('#question8').val(),
+                    $('#question9').val(),
+                    $('#question10').val()
+                ]
+            };
+
+            // Now we call an express post to Add this new friend to the friend array
+            $.post('/api/friends', newFriendInput, function(data) {
+
+                    // console.log("returned from post route apiroute");
+                    console.log("Returned:");
+                    // console.log("Returned Data: " + JSON.stringify(data));
+
+                    // try to get some sort of confirmation on the data returned
+                    // console.log("Data Name: " + data.name);
+                    // alert("Data Name: " + data.name);
+
+                    // hard coded feedback
+                    // $('#match_name').text("JEFFO");
+                    // $('#match_photo').attr('src', "https://i.pinimg.com/originals/cd/a5/15/cda51571f9c4d8372b684fe69cc4f17b.jpg");
+                    // // Pop open the modal dialog
+                    // $('#match_results').modal('open');
+
+                    // Set the name and image values of friend match
+                    // $('#match_name').html(data.bestMatchName);
+                    // $('#match_photo').attr('src', data.bestMatchPhoto);
+                    // Pop open the modal dialog
+                    // $('#match_results').modal('open');
+
+                }); // end .post
+        }); // end on click
+    </script>
+
+</body>
+
+</html>
