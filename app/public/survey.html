@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <title>Friend-Finder</title>
 
-    <!-- reset css -->
+    <!-- set css -->
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- font awesome 5 -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
@@ -229,74 +230,58 @@
 
     </div> <!-- end container -->
 
-    <!-- present the best match for the friend that was just entered -->
-    <!-- ACKNOWLEDGEMENT - below modal div code from homework heroku example site -->
-    <div id="match_results" class="modal-fade" role="dialog" style="display:none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">X</button>
-                    <h2 class="modal-title">
-                        <strong>Best Match</strong>
-                    </h2>
-                </div> <!-- end modal header -->
-                <div class="modal-body">
-                    <h2 id="match_name"></h2>
-                    <img id="match_photo" src="" alt="Missing Photo">
-                </div> <!-- end div modal body -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div> <!-- end modal footer -->
-            </div> <!-- end modal content div -->
-        </div> <!-- end modal dialog div -->
-    </div> <!-- end match_results div -->
+    <!-- modal -->
+    <div id="match_results" class="modal">
+        <div class="modal-content">
+            <h4>Best Match</h4>
+            <h5 id="match_name"></h5>
+            <img id="match_photo" src="" alt="No Image" width=300px>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
 
     <script type="text/javascript">
         // create an event handler to deal with the submit button when a user completes the survey
-        $('#submitButton').on('click', function (event) {
+        $("#submitButton").on("click", function (event) {
             event.preventDefault();
             // place all of the new friend input in an object so we can add it to our array of other friends
             var newFriendInput = {
-                name: $('#friendName').val().trim(),
-                photo: $('#friendPhoto').val().trim(),
+                name: $("#friendName").val().trim(),
+                photo: $("#friendPhoto").val().trim(),
                 scores: [
-                    $('#question1').val(),
-                    $('#question2').val(),
-                    $('#question3').val(),
-                    $('#question4').val(),
-                    $('#question5').val(),
-                    $('#question6').val(),
-                    $('#question7').val(),
-                    $('#question8').val(),
-                    $('#question9').val(),
-                    $('#question10').val()
+                    $("#question1").val(),
+                    $("#question2").val(),
+                    $("#question3").val(),
+                    $("#question4").val(),
+                    $("#question5").val(),
+                    $("#question6").val(),
+                    $("#question7").val(),
+                    $("#question8").val(),
+                    $("#question9").val(),
+                    $("#question10").val()
                 ]
             };
 
             // Now we call an express post to Add this new friend to the friend array
-            $.post('/api/friends', newFriendInput, function(data) {
+            $.post("/api/friends", newFriendInput, function (data) {
 
-                    // console.log("returned from post route apiroute");
-                    console.log("Returned:");
-                    // console.log("Returned Data: " + JSON.stringify(data));
+                console.log(data);
+                // var returnedData = JSON.parse(data);
+                //     console.log(returnedData);
 
-                    // try to get some sort of confirmation on the data returned
-                    // console.log("Data Name: " + data.name);
-                    // alert("Data Name: " + data.name);
+                // console.log("returned from post route apiroute");
+                // console.log("DATA Back:");
+                // console.log("actual data" + data);
 
-                    // hard coded feedback
-                    // $('#match_name').text("JEFFO");
-                    // $('#match_photo').attr('src', "https://i.pinimg.com/originals/cd/a5/15/cda51571f9c4d8372b684fe69cc4f17b.jpg");
-                    // // Pop open the modal dialog
-                    // $('#match_results').modal('open');
+                // Set the name and image values of friend match
+                $("#match_name").text(data.name);
+                $("#match_photo").attr("src", data.photo);
+                // $("#modal1").modal("toggle");
+                $("#match_results").modal("toggle");
 
-                    // Set the name and image values of friend match
-                    // $('#match_name').html(data.bestMatchName);
-                    // $('#match_photo').attr('src', data.bestMatchPhoto);
-                    // Pop open the modal dialog
-                    // $('#match_results').modal('open');
-
-                }); // end .post
+            }); // end .post
         }); // end on click
     </script>
 
