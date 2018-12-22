@@ -1,6 +1,6 @@
 # FriendFinder
 
-##Description
+## Description
 Friend Finder is a simple friend matching algorithm that asks users a series of questions then compares those answers with an array of existing individuals. Questions are answered on a likert scale from 1 strongl disagree to 5 strongly agree.  Once answers are submitted the algorithm will identify the best match. 
 
 The matching algorithm works as follows:
@@ -14,8 +14,8 @@ The matching algorithm works as follows:
 
 This application uses Node.js and Express server on the back end and Bootstrap on the front end.
 
-##Demo
+## Demo
 Friend Finder is deployed on Heroku and you can try it [here](https://jbond-friend-finder.herokuapp.com/).
 
-##Notes
+## Notes
 Friend Finder locally runs on Port 8080.
